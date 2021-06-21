@@ -1,6 +1,7 @@
 package com.whirlwind.gxmubbs.controller;
 
 import com.whirlwind.gxmubbs.service.AlphaService;
+import com.whirlwind.gxmubbs.util.CommunityUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
@@ -8,6 +9,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpServletResponseWrapper;
+import javax.servlet.http.HttpSession;
 import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
@@ -97,6 +102,53 @@ public class AlphaController {
         emp.put("salary",8000.00);
         return emp;
     }
+
+    //cookie示例
+    @RequestMapping(path = "/cookie/set",method = RequestMethod.GET)
+    @ResponseBody
+    public String setCookie(HttpServletResponse response){
+        //创建cookie
+        Cookie cookie=new Cookie("code", CommunityUtil.createUUID());
+        //设置cookie生效的范围
+        cookie.setPath("/gxmubbs/alpha");
+        //设置cookie的生存时间
+        cookie.setMaxAge(60*10);
+        //发送cookie
+        response.addCookie(cookie);
+        return "setting cookie!";
+    }
+
+    @RequestMapping(path = "/cookie/get",method = RequestMethod.GET)
+    @ResponseBody
+    public String getCookie(@CookieValue("code") String code){
+
+        return code;
+    }
+
+    /**
+     * session是基于Cookie实现的,因为客户端要识别服务端的Session需要Cookie存储对应的id
+     * @param session
+     * @return
+     */
+    @RequestMapping(path="/session/set",method = RequestMethod.GET)
+    @ResponseBody
+    public String setSession(HttpSession session){
+        session.setAttribute("id",1);
+        session.setAttribute("name","Test");
+        return "set session";
+    }
+
+    @RequestMapping(path="/session/get",method = RequestMethod.GET)
+    @ResponseBody
+    public String getSession(HttpSession session){
+        String id=session.getAttribute("id").toString();
+        String name=session.getAttribute("name").toString();
+        return id+" "+name;
+    }
+
+
+
+
 
 
 

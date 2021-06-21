@@ -5,9 +5,11 @@ import com.whirlwind.gxmubbs.entity.Page;
 import com.whirlwind.gxmubbs.entity.User;
 import com.whirlwind.gxmubbs.service.DiscussPostService;
 import com.whirlwind.gxmubbs.service.UserService;
+import com.whirlwind.gxmubbs.util.CommunityConstant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -17,7 +19,7 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
-public class HomeController {
+public class HomeController{
     @Autowired
     private DiscussPostService discussPostService;
 
@@ -44,4 +46,5 @@ public class HomeController {
         model.addAttribute("discussPosts",discussPosts);
         return "/index";
     }
+
 }
