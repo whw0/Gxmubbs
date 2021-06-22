@@ -43,6 +43,7 @@ public class UserService implements CommunityConstant {
     @Autowired
     private LoginTicketMapper loginTicketMapper;
 
+    //由id查询用户
     public User findUserById(int id){
         return userMapper.selectById(id);
     }
@@ -134,6 +135,7 @@ public class UserService implements CommunityConstant {
         }
     }
 
+    //登录并生成登录凭证
     public Map<String, Object> login(String username, String password, int expiredSeconds) {
         Map<String, Object> map = new HashMap<>();
 
@@ -179,16 +181,18 @@ public class UserService implements CommunityConstant {
         return map;
     }
 
+    //退出
     public void logout(String ticket) {
         loginTicketMapper.updateStatus(ticket, 1);
     }
 
+    //获取激活凭证
     public LoginTicket findLoginTicket(String ticket) {
         return loginTicketMapper.selectByTicket(ticket);
     }
 
 
-
+//设置头像
 
     public int updateHeader(int userId, String headerUrl) {
         return userMapper.updateHeader(userId, headerUrl);
