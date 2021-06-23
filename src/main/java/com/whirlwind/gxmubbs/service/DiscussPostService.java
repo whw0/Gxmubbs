@@ -1,5 +1,6 @@
 package com.whirlwind.gxmubbs.service;
 
+
 import com.whirlwind.gxmubbs.dao.DiscussPostMapper;
 import com.whirlwind.gxmubbs.entity.DiscussPost;
 import com.whirlwind.gxmubbs.util.SensitiveFilter;
@@ -11,17 +12,18 @@ import java.util.List;
 
 @Service
 public class DiscussPostService {
-    @Autowired
-    private SensitiveFilter sensitiveFilter;
 
     @Autowired
     private DiscussPostMapper discussPostMapper;
 
-    public List<DiscussPost> findDiscussPosts(int userId,int offset,int limit){
+    @Autowired
+    private SensitiveFilter sensitiveFilter;
+
+    public List<DiscussPost> findDiscussPosts(int userId, int offset, int limit) {
         return discussPostMapper.selectDiscussPosts(userId, offset, limit);
     }
 
-    public int findDiscussPostRows(int userId){
+    public int findDiscussPostRows(int userId) {
         return discussPostMapper.selectDiscussPostRows(userId);
     }
 
@@ -43,5 +45,9 @@ public class DiscussPostService {
     public DiscussPost findDiscussPostById(int id) {
         return discussPostMapper.selectDiscussPostById(id);
     }
-}
 
+    public int updateCommentCount(int id, int commentCount) {
+        return discussPostMapper.updateCommentCount(id, commentCount);
+    }
+
+}

@@ -3,15 +3,15 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="icon" href="https://static.nowcoder.com/images/logo_87_87.png"/>
+	<link rel="icon" href="https://www.hualigs.cn/image/60d29b0149366.jpg"/>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
 	<link rel="stylesheet" th:href="@{/css/global.css}" />
-	<title>牛客网-首页</title>
+	<title>GXMUBBS</title>
 </head>
 <body>	
 	<div class="nk-container">
 		<!-- 头部 -->
-		<header class="bg-dark sticky-top" th:fragment="header">
+		<header class="bgzdy sticky-top" th:fragment="header">
 			<div class="container">
 				<!-- 导航 -->
 				<nav class="navbar navbar-expand-lg navbar-dark">
@@ -133,14 +133,14 @@
 								<ul class="d-inline float-right">
 									<li class="d-inline ml-2">赞 11</li>
 									<li class="d-inline ml-2">|</li>
-									<li class="d-inline ml-2">回帖 7</li>
+									<li class="d-inline ml-2">回帖 <span th:text="${map.post.commentCount}">7</span></li>
 								</ul>
 							</div>
 						</div>						
 					</li>
 				</ul>
 				<!-- 分页 -->
-				<nav class="mt-5" th:if="${page.rows>0}">
+				<nav class="mt-5" th:if="${page.rows>0}" th:fragment="pagination">
 					<ul class="pagination justify-content-center">
 						<li class="page-item">
 							<a class="page-link" th:href="@{${page.path}(current=1)}">首页</a>
@@ -162,14 +162,14 @@
 		</div>
 
 		<!-- 尾部 -->
-		<footer class="bg-dark">
+		<footer class="bgzdy" th:fragment="footer">
 			<div class="container">
 				<div class="row">
 					<!-- 二维码 -->
 					<div class="col-4 qrcode">
-						<img src="https://uploadfiles.nowcoder.com/app/app_download.png" class="img-thumbnail" style="width:136px;" />
+						<img src="https://www.hualigs.cn/image/60d29ca31b61c.jpg" class="img-thumbnail" style="width:136px;" />
 					</div>
-					<!-- 公司信息 -->
+					<!-- 信息 -->
 					<div class="col-8 detail-info">
 						<div class="row">
 							<div class="col">
@@ -184,7 +184,7 @@
 										<a class="nav-link text-light" href="#">意见反馈</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link text-light" href="#">企业服务</a>
+										<a class="nav-link text-light" href="#">学校服务</a>
 									</li>
 									<li class="nav-item">
 										<a class="nav-link text-light" href="#">联系我们</a>
@@ -202,18 +202,13 @@
 							<div class="col">
 								<ul class="nav btn-group-vertical company-info">
 									<li class="nav-item text-white-50">
-										公司地址：北京市朝阳区大屯路东金泉时代3-2708北京牛客科技有限公司
+										学校地址:广西医科大学武鸣校区
 									</li>
 									<li class="nav-item text-white-50">
-										联系方式：010-60728802(电话)&nbsp;&nbsp;&nbsp;&nbsp;admin@nowcoder.com
+										联系方式：010-60728802(电话)&nbsp;&nbsp;&nbsp;&nbsp;1585819425@qq.com
 									</li>
 									<li class="nav-item text-white-50">
-										牛客科技©2018 All rights reserved
-									</li>
-									<li class="nav-item text-white-50">
-										京ICP备14055008号-4 &nbsp;&nbsp;&nbsp;&nbsp;
-										<img src="http://static.nowcoder.com/company/images/res/ghs.png" style="width:18px;" />
-										京公网安备 11010502036488号
+										Whirlwind©2021 All rights reserved
 									</li>
 								</ul>
 							</div>

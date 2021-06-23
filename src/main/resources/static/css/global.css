@@ -3,7 +3,10 @@ html {
 }
 
 body {
-	background: #eee;
+	/*background: #eee;*/
+	/*海天蓝rgb 220226241#DCE2F1*/
+
+	background: #DCE2F1;
 	/*background: #D2691E;*/
 	font-family: arial, STHeiti, 'Microsoft YaHei', \5b8b\4f53;
 	font-size: 14px;
@@ -24,7 +27,8 @@ body {
 header .navbar-brand {
 	/*https://ss3.baidu.com/-fo3dSag_xI4khGko9WTAnF6hhy/baike/s=220/sign=ad6efffe3d12b31bc36cca2bb6193674/54fbb2fb43166d2291a9762d422309f79152d2a9.jpg*/
 	/*http://static.nowcoder.com/images/res/logo/logo-v3.png*/
-	background: url('http://static.nowcoder.com/images/res/logo/logo-v3.png') no-repeat;
+	background:  url('../img/img_2.png') no-repeat;
+	/*background-image:url(static/img/logo.png);*/
 	background-size: 147px 42px;
 	width: 147px;
 	height: 42px;
@@ -132,7 +136,7 @@ a:hover {
 	margin-bottom: 2px;
 	margin-right: 3px;
 }
-
+/*回复的颜色*/
 .bg-gray {
 	background: #eff0f2;
 }
@@ -146,3 +150,12 @@ em {
 	font-style: normal;
 	color: red;
 }
+
+header.bgzdy{
+	background: #127780;
+}
+
+footer.bgzdy{
+	background: #127780;
+}
+
