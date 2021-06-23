@@ -27,7 +27,7 @@
 								<a class="nav-link" th:href="@{/index}">首页</a>
 							</li>
 							<li class="nav-item ml-3 btn-group-vertical" th:if="${loginUser!=null}">
-								<a class="nav-link position-relative" href="site/letter.html">消息<span class="badge badge-danger">12</span></a>
+								<a class="nav-link position-relative" th:href="@{/letter/list}">消息<span class="badge badge-danger">12</span></a>
 							</li>
 							<li class="nav-item ml-3 btn-group-vertical" th:if="${loginUser==null}">
 								<a class="nav-link" th:href="@{/register}">注册</a>
@@ -206,7 +206,7 @@
 										学校地址:广西医科大学武鸣校区
 									</li>
 									<li class="nav-item text-white-50">
-										联系方式：010-60728802(电话)&nbsp;&nbsp;&nbsp;&nbsp;1585819425@qq.com
+										联系方式：010-63428802(电话)&nbsp;&nbsp;&nbsp;&nbsp;1585819425@qq.com
 									</li>
 									<li class="nav-item text-white-50">
 										Whirlwind©2021 All rights reserved
