@@ -2,6 +2,14 @@ package com.whirlwind.gxmubbs.entity;
 
 import java.util.Date;
 
+
+/**
+ * @param salt 加密密码
+ * @param type 用户类型
+ * @param activationCode 激活码
+ * @Param status 是否激活 0是未激活 1是激活
+ */
+
 public class User {
     private int id;
     private String username;

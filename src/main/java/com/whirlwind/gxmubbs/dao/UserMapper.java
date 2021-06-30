@@ -12,6 +12,8 @@ public interface UserMapper {
     User selectByEmail(String email);
 
     int insertUser(User user);
+
+    //修改用户状态
     int updateStatus(int id,int status);
     int updateHeader(int id,String headerUrl);
     int updatePassword(int id,String password);

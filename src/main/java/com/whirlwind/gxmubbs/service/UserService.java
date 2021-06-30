@@ -48,6 +48,11 @@ public class UserService implements CommunityConstant {
         return userMapper.selectById(id);
     }
 
+    /**
+     *
+     * @param user
+     * @return Map 返回一个map 如果有错误返回的map则不是空的
+     */
     public Map<String,Object> register(User user){
         Map<String,Object> map=new HashMap<>();
 
@@ -109,6 +114,7 @@ public class UserService implements CommunityConstant {
         context.setVariable("email",user.getEmail());
         String url=domain+contextPath+"/activation/"+user.getId()+"/"+ user.getActivationCode();
         context.setVariable("url",url);
+        //通过/mail/activation下的html文件 其中html文件需要的变量用Context存储键值对送到html 产生模板
         String content =templateEngine.process("/mail/activation",context);
         mailClient.sendMail(user.getEmail(),"GXMUBBS账号激活",content);
 

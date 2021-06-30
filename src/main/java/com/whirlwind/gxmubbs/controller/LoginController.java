@@ -38,6 +38,7 @@ public class LoginController implements CommunityConstant {
     @Autowired
     private Producer kaptchaProducer;
 
+    //无参数传递用GET
     @RequestMapping(path = "/register",method = RequestMethod.GET)
     public String getRegisterPage(){
         return "/site/register";
@@ -48,6 +49,7 @@ public class LoginController implements CommunityConstant {
         return "/site/login";
     }
 
+    //有参数传递用POST
     @RequestMapping(path="/register",method = RequestMethod.POST)
     public  String register(Model model, User user){
         Map<String,Object> map=userService.register(user);
