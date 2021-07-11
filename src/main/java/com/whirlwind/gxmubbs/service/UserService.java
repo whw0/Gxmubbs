@@ -49,7 +49,7 @@ public class UserService implements CommunityConstant {
     }
 
     /**
-     *
+     *注册功能
      * @param user
      * @return Map 返回一个map 如果有错误返回的map则不是空的
      */
@@ -120,6 +120,7 @@ public class UserService implements CommunityConstant {
 
         return map;
     }
+
 
     /**
      * 激活处理

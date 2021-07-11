@@ -50,6 +50,7 @@ public class LoginController implements CommunityConstant {
     }
 
     //有参数传递用POST
+    //表现层 注册功能数据传输
     @RequestMapping(path="/register",method = RequestMethod.POST)
     public  String register(Model model, User user){
         Map<String,Object> map=userService.register(user);

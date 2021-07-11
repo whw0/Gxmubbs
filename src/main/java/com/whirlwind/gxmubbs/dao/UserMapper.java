@@ -3,7 +3,6 @@ package com.whirlwind.gxmubbs.dao;
 import com.whirlwind.gxmubbs.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
-//用@Repository也可以
 @Mapper
 public interface UserMapper {
     //一些查询方法
